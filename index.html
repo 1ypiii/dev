@@ -2518,9 +2518,10 @@
                     return;
                 }
                 
-                const results = marketplaceUsers.filter(user => 
-                    user.displayName && user.displayName.toLowerCase().includes(query)
-                );
+            const results = marketplaceUsers.filter(user => {
+            const displayName = user.displayName || user.name; // Use name if displayName doesn't exist
+        return displayName && displayName.toLowerCase().includes(query);
+    });
                 
                 displaySearchResults(results);
             });
@@ -3004,11 +3005,12 @@
                 });
             });
             
-            // Load community assets from localStorage
-            const storedAssets = localStorage.getItem('communityAssets');
+        const storedAssets = localStorage.getItem('communityAssets');
             if (storedAssets) {
-                communityAssets = JSON.parse(storedAssets);
-            }
+    communityAssets = JSON.parse(storedAssets);
+    } else {
+    communityAssets = []; // Initialize as empty array if no assets exist
+    }
             
             // Load user preferences
             loadUserPreferences();
@@ -3032,16 +3034,17 @@
             // Clear current grid
             communityAssetsGrid.innerHTML = '';
             
-            if (communityAssets.length === 0) {
-                communityAssetsGrid.innerHTML = `
-                    <div class="community-assets-empty">
-                        <i class="fas fa-box-open"></i>
-                        <h3>No Community Assets Yet</h3>
-                        <p>Be the first to upload an asset to the community!</p>
-                    </div>
-                `;
-                return;
-            }
+        // In the renderCommunityAssets function
+        if (!communityAssets || communityAssets.length === 0) {
+      communityAssetsGrid.innerHTML = `
+        <div class="community-assets-empty">
+            <i class="fas fa-box-open"></i>
+            <h3>No Community Assets Yet</h3>
+            <p>Be the first to upload an asset to the community!</p>
+        </div>
+    `;
+    return;
+}
             
             // Add each asset to the grid
             communityAssets.forEach(asset => {
@@ -3861,7 +3864,7 @@
             
             // Load profile data
             profileNameDisplay.textContent = user.displayName || user.name;
-            profileUsername.textContent = `@${user.email.split('@')[0]}`;
+            profileUsername.textContent = `@${user.email.split('@')[0]}`; // Ensure username is always set  
             profileBioDisplay.textContent = user.bio || 'No bio provided';
             profileAvatarDisplay.src = user.avatar || 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/250px-Black.png';
             
