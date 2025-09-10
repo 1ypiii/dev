@@ -338,6 +338,16 @@
             font-weight: 600;
         }
         
+        .early-supporter-badge {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        
         .asset-actions {
             display: flex;
             gap: 0.5rem;
@@ -721,6 +731,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            cursor: pointer;
         }
         
         .comment-user img {
@@ -975,6 +986,206 @@
             color: var(--primary);
         }
         
+        /* Search bar styles */
+        .search-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--dark);
+            border-radius: 0 0 15px 15px;
+            overflow: hidden;
+            z-index: 10;
+            display: none;
+        }
+        
+        .search-result-item {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .search-result-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .search-result-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        /* User profile page styles */
+        .user-profile {
+            background: rgba(33, 37, 41, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(108, 117, 125, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+        
+        .profile-banner {
+            height: 200px;
+            background: var(--darker);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .profile-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-header-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-avatar-large {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+        }
+        
+        .profile-user-info {
+            flex: 1;
+        }
+        
+        .profile-display-name {
+            font-size: 1.8rem;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .profile-username {
+            color: var(--medium);
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-bio {
+            color: var(--medium);
+            margin-bottom: 1rem;
+        }
+        
+        .profile-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .profile-stat-label {
+            font-size: 0.9rem;
+            color: var(--medium);
+        }
+        
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .profile-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(108, 117, 125, 0.2);
+            padding-bottom: 1rem;
+        }
+        
+        .profile-tab {
+            padding: 0.8rem 1.5rem;
+            background: rgba(108, 117, 125, 0.1);
+            border: none;
+            border-radius: 8px;
+            color: var(--medium);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-tab:hover {
+            background: rgba(108, 117, 125, 0.2);
+        }
+        
+        .profile-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .profile-content {
+            display: none;
+        }
+        
+        .profile-content.active {
+            display: block;
+        }
+        
+        /* Color picker styles */
+        .color-picker {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .color-option.selected {
+            border-color: white;
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -1027,6 +1238,15 @@
                 align-items: flex-start;
                 gap: 0.5rem;
             }
+            
+            .profile-header-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-stats {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -1056,6 +1276,12 @@
             </div>
         </header>
         
+        <!-- Search Bar -->
+        <div class="search-container" id="searchContainer" style="display: none;">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search users by display name...">
+            <div class="search-results" id="searchResults"></div>
+        </div>
+        
         <!-- Profile Customization Section (hidden by default) -->
         <div class="profile-container" id="profileContainer">
             <div class="profile-header">
@@ -1067,11 +1293,48 @@
                     <button class="btn btn-secondary" id="changeAvatarBtn">
                         <i class="fas fa-camera"></i> Change Avatar
                     </button>
-                    <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+                    <input type="file" id="avatarUpload" accept="image/*,video/*,.gif" style="display: none;">
+                    
+                    <div class="form-group">
+                        <label for="profileBanner">Profile Banner</label>
+                        <div class="file-upload">
+                            <div class="file-upload-preview" id="bannerPreviewContainer">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <input type="file" id="profileBanner" accept="image/*,video/*,.gif" style="display: none;">
+                            <button class="btn btn-secondary" id="triggerBannerUpload">
+                                <i class="fas fa-upload"></i> Select Banner
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Profile Color</label>
+                        <div class="color-picker">
+                            <div class="color-option selected" style="background-color: #6c757d;" data-color="#6c757d"></div>
+                            <div class="color-option" style="background-color: #495057;" data-color="#495057"></div>
+                            <div class="color-option" style="background-color: #adb5bd;" data-color="#adb5bd"></div>
+                            <div class="color-option" style="background-color: #28a745;" data-color="#28a745"></div>
+                            <div class="color-option" style="background-color: #dc3545;" data-color="#dc3545"></div>
+                            <div class="color-option" style="background-color: #ffc107;" data-color="#ffc107"></div>
+                            <div class="color-option" style="background-color: #17a2b8;" data-color="#17a2b8"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="profileSound">Profile Sound</label>
+                        <div class="file-upload">
+                            <input type="file" id="profileSound" accept="audio/*" style="display: none;">
+                            <button class="btn btn-secondary" id="triggerSoundUpload">
+                                <i class="fas fa-upload"></i> Select Sound
+                            </button>
+                            <span id="selectedSoundFile">No sound selected</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="profile-details">
                     <div class="form-group">
-                        <label for="profileName">Display Name</label>
+                        <label for="profileName">Display Name <span id="nameAvailability"></span></label>
                         <input type="text" id="profileName" placeholder="Enter your display name">
                     </div>
                     <div class="form-group">
@@ -1085,6 +1348,75 @@
                     <button class="btn btn-primary" id="saveProfileBtn">
                         <i class="fas fa-save"></i> Save Profile
                     </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- User Profile Page (hidden by default) -->
+        <div class="user-profile" id="userProfile">
+            <div class="profile-banner" id="profileBannerDisplay">
+                <!-- Banner will be displayed here -->
+            </div>
+            
+            <div class="profile-header-info">
+                <img src="" alt="User Avatar" class="profile-avatar-large" id="profileAvatarDisplay">
+                <div class="profile-user-info">
+                    <div class="profile-display-name" id="profileDisplayName">
+                        <span id="profileNameDisplay"></span>
+                        <span class="early-supporter-badge" id="earlySupporterBadge" style="display: none;">Early Supporter</span>
+                    </div>
+                    <div class="profile-username" id="profileUsername"></div>
+                    <div class="profile-bio" id="profileBioDisplay"></div>
+                    
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <div class="profile-stat-value" id="assetsCount">0</div>
+                            <div class="profile-stat-label">Assets</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="profile-stat-value" id="followersCount">0</div>
+                            <div class="profile-stat-label">Followers</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="profile-stat-value" id="followingCount">0</div>
+                            <div class="profile-stat-label">Following</div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-actions" id="profileActions">
+                        <button class="btn btn-primary" id="followButton">
+                            <i class="fas fa-user-plus"></i> Follow
+                        </button>
+                        <button class="btn btn-secondary" id="messageButton">
+                            <i class="fas fa-envelope"></i> Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-tabs">
+                <button class="profile-tab active" data-profile-tab="assets">
+                    <i class="fas fa-cube"></i> Assets
+                </button>
+                <button class="profile-tab" data-profile-tab="about">
+                    <i class="fas fa-info-circle"></i> About
+                </button>
+            </div>
+            
+            <div class="profile-content active" id="profileAssets">
+                <div class="assets-grid" id="userAssetsGrid">
+                    <!-- User's assets will be displayed here -->
+                </div>
+            </div>
+            
+            <div class="profile-content" id="profileAbout">
+                <div class="form-group">
+                    <label>Website</label>
+                    <p id="profileWebsiteDisplay">No website provided</p>
+                </div>
+                <div class="form-group">
+                    <label>Member Since</label>
+                    <p id="profileJoinDate"></p>
                 </div>
             </div>
         </div>
@@ -1114,6 +1446,9 @@
                 </button>
                 <button class="admin-tab" data-admin-tab="settings">
                     <i class="fas fa-cog"></i> Settings
+                </button>
+                <button class="admin-tab" data-admin-tab="earlySupporters">
+                    <i class="fas fa-star"></i> Early Supporters
                 </button>
             </div>
             
@@ -1176,6 +1511,26 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="admin-content" id="adminEarlySupporters">
+                <h3>Early Supporters</h3>
+                <p>Manage early supporters list</p>
+                
+                <div class="form-group">
+                    <label for="earlySupporterEmail">Early Supporter Email</label>
+                    <input type="email" id="earlySupporterEmail" placeholder="Enter email to add as early supporter">
+                    <button class="btn btn-primary" id="addEarlySupporterBtn" style="margin-top: 0.5rem;">
+                        <i class="fas fa-plus"></i> Add Early Supporter
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <h4>Early Supporters List</h4>
+                    <ul id="earlySupportersList">
+                        <!-- Early supporters list will be populated here -->
+                    </ul>
+                </div>
+            </div>
         </div>
         
         <section class="hero">
@@ -1211,8 +1566,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Sci-Fi Spaceship</h3>
+                            <p>Highly detailed spacecraft model with customizable parts.</p>
                             <div class="asset-stats">
                                 <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">245</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">89</span></div>
@@ -1235,8 +1590,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Fantasy Dragon</h3>
+                            <p>Animated dragon character with flight and attack animations.</p>
                             <div class="asset-stats">
                             <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">512</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">167</span></div>
@@ -1259,8 +1614,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Modular City Pack</h3>
+                            <p>Build your own city with this set of modular buildings and props.</p>
                             <div class="asset-stats">
                                 <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">378</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">124</span></div>
@@ -1290,8 +1645,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Nature Pack</h3>
+                            <p>Set of 10 realistic trees and plants for your environment scenes.</p>
                             <div class="asset-stats">
                                 <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">892</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">543</span></div>
@@ -1314,8 +1669,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Crystal Collection</h3>
+                            <p>Set of 8 fantasy crystals with glowing materials and textures.</p>
                             <div class="asset-stats">
                                 <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">654</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">387</span></div>
@@ -1338,8 +1693,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Basic UI Kit</h3>
+                            <p>Minimalistic UI elements for your AR/VR applications.</p>
                             <div class="asset-stats">
                                 <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">723</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">421</span></div>
@@ -1369,8 +1724,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Character Animation Pack</h3>
+                            <p>Collection of 20 professional motion-captured animations for characters.</p>
                             <div class="asset-stats">
                                 <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">623</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">187</span></div>
@@ -1393,8 +1748,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>Gesture Pack</h3>
+                            <p>Set of 15 hand gestures and finger motions for realistic character interaction.</p>
                             <div class="asset-stats">
                             <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">487</span></div>
                             <div class="stat"><i class="fas fa-download"></i> <span class="download-count">132</span></div>
@@ -1417,8 +1772,8 @@
                             </div>
                         </div>
                         <div class="asset-info">
-                            <h3>test</h3>
-                            <p>test</p>
+                            <h3>VFX Elements</h3>
+                            <p>Collection of 50 visual effects animations for games and films.</p>
                             <div class="asset-stats">
                             <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">542</span></div>
                                 <div class="stat"><i class="fas fa-download"></i> <span class="download-count">176</span></div>
@@ -1633,6 +1988,20 @@
         let adminUsers = JSON.parse(localStorage.getItem('adminUsers')) || ['wow1ypii@gmail.com'];
         let marketplaceUsers = JSON.parse(localStorage.getItem('marketplaceUsers')) || [];
         let assetComments = JSON.parse(localStorage.getItem('assetComments')) || {};
+        let earlySupporters = JSON.parse(localStorage.getItem('earlySupporters')) || ['wow1ypii@gmail.com'];
+        let displayedUser = null;
+        let followingData = JSON.parse(localStorage.getItem('followingData')) || {};
+        let assetFiles = JSON.parse(localStorage.getItem('assetFiles')) || {
+            "Sci-Fi Spaceship": { url: "https://example.com/spaceship.rbxl", filename: "spaceship.rbxl" },
+            "Fantasy Dragon": { url: "https://example.com/dragon.rbxl", filename: "dragon.rbxl" },
+            "Modular City Pack": { url: "https://example.com/city.rbxl", filename: "city.rbxl" },
+            "Nature Pack": { url: "https://example.com/nature.rbxl", filename: "nature.rbxl" },
+            "Crystal Collection": { url: "https://example.com/crystals.rbxl", filename: "crystals.rbxl" },
+            "Basic UI Kit": { url: "https://example.com/ui.rbxl", filename: "ui.rbxl" },
+            "Character Animation Pack": { url: "https://example.com/animations.rbxl", filename: "animations.rbxl" },
+            "Gesture Pack": { url: "https://example.com/gestures.rbxl", filename: "gestures.rbxl" },
+            "VFX Elements": { url: "https://example.com/vfx.rbxl", filename: "vfx.rbxl" }
+        };
         
         // DOM Elements
         const loginButton = document.getElementById('loginButton');
@@ -1683,6 +2052,14 @@
         const profileBio = document.getElementById('profileBio');
         const profileWebsite = document.getElementById('profileWebsite');
         const saveProfileBtn = document.getElementById('saveProfileBtn');
+        const nameAvailability = document.getElementById('nameAvailability');
+        const triggerBannerUpload = document.getElementById('triggerBannerUpload');
+        const profileBanner = document.getElementById('profileBanner');
+        const bannerPreviewContainer = document.getElementById('bannerPreviewContainer');
+        const triggerSoundUpload = document.getElementById('triggerSoundUpload');
+        const profileSound = document.getElementById('profileSound');
+        const selectedSoundFile = document.getElementById('selectedSoundFile');
+        const colorOptions = document.querySelectorAll('.color-option');
         
         // Admin panel elements
         const adminNavLink = document.getElementById('adminNavLink');
@@ -1694,6 +2071,34 @@
         const adminEmail = document.getElementById('adminEmail');
         const addAdminBtn = document.getElementById('addAdminBtn');
         const adminList = document.getElementById('adminList');
+        const earlySupporterEmail = document.getElementById('earlySupporterEmail');
+        const addEarlySupporterBtn = document.getElementById('addEarlySupporterBtn');
+        const earlySupportersList = document.getElementById('earlySupportersList');
+        
+        // Search elements
+        const searchContainer = document.getElementById('searchContainer');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        
+        // User profile elements
+        const userProfile = document.getElementById('userProfile');
+        const profileBannerDisplay = document.getElementById('profileBannerDisplay');
+        const profileAvatarDisplay = document.getElementById('profileAvatarDisplay');
+        const profileNameDisplay = document.getElementById('profileNameDisplay');
+        const profileUsername = document.getElementById('profileUsername');
+        const profileBioDisplay = document.getElementById('profileBioDisplay');
+        const earlySupporterBadge = document.getElementById('earlySupporterBadge');
+        const assetsCount = document.getElementById('assetsCount');
+        const followersCount = document.getElementById('followersCount');
+        const followingCount = document.getElementById('followingCount');
+        const profileActions = document.getElementById('profileActions');
+        const followButton = document.getElementById('followButton');
+        const messageButton = document.getElementById('messageButton');
+        const userAssetsGrid = document.getElementById('userAssetsGrid');
+        const profileWebsiteDisplay = document.getElementById('profileWebsiteDisplay');
+        const profileJoinDate = document.getElementById('profileJoinDate');
+        const profileTabs = document.querySelectorAll('.profile-tab');
+        const profileContents = document.querySelectorAll('.profile-content');
         
         // Initialize the application
         function initApp() {
@@ -1711,6 +2116,8 @@
                     profileContainer.style.display = 'none';
                     adminPanel.style.display = 'none';
                     downloadHistory.style.display = 'none';
+                    userProfile.style.display = 'none';
+                    searchContainer.style.display = 'none';
                     
                     // Add active class to clicked tab and corresponding content
                     tab.classList.add('active');
@@ -1720,6 +2127,19 @@
                     if (tab.dataset.tab === 'tab5') {
                         renderCommunityAssets();
                     }
+                });
+            });
+            
+            // Set up profile tab functionality
+            profileTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all profile tabs and content
+                    profileTabs.forEach(t => t.classList.remove('active'));
+                    profileContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    tab.classList.add('active');
+                    document.getElementById('profile' + tab.dataset.profileTab.charAt(0).toUpperCase() + tab.dataset.profileTab.slice(1)).classList.add('active');
                 });
             });
             
@@ -1735,6 +2155,8 @@
                 profileContainer.style.display = 'none';
                 adminPanel.style.display = 'none';
                 downloadHistory.style.display = 'none';
+                userProfile.style.display = 'none';
+                searchContainer.style.display = 'none';
                 
                 // Activate Free Assets tab
                 document.querySelector('[data-tab="tab2"]').classList.add('active');
@@ -1759,6 +2181,8 @@
                         loadAssetsTable();
                     } else if (tab.dataset.adminTab === 'settings') {
                         loadAdminSettings();
+                    } else if (tab.dataset.adminTab === 'earlySupporters') {
+                        loadEarlySupportersList();
                     }
                 });
             });
@@ -1775,6 +2199,8 @@
                 profileContainer.style.display = 'none';
                 adminPanel.style.display = 'none';
                 downloadHistory.style.display = 'none';
+                userProfile.style.display = 'none';
+                searchContainer.style.display = 'none';
                 
                 // Activate Community Assets tab
                 document.querySelector('[data-tab="tab5"]').classList.add('active');
@@ -1808,6 +2234,8 @@
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 adminPanel.style.display = 'none';
                 downloadHistory.style.display = 'none';
+                userProfile.style.display = 'none';
+                searchContainer.style.display = 'none';
                 
                 // Show profile container
                 profileContainer.style.display = 'block';
@@ -1831,6 +2259,8 @@
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 adminPanel.style.display = 'none';
                 profileContainer.style.display = 'none';
+                userProfile.style.display = 'none';
+                searchContainer.style.display = 'none';
                 
                 // Show download history
                 downloadHistory.style.display = 'block';
@@ -1848,6 +2278,8 @@
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                 profileContainer.style.display = 'none';
                 downloadHistory.style.display = 'none';
+                userProfile.style.display = 'none';
+                searchContainer.style.display = 'none';
                 
                 // Show admin panel
                 adminPanel.style.display = 'block';
@@ -1882,6 +2314,32 @@
                 loadAdminSettings();
             });
             
+            // Add early supporter functionality
+            addEarlySupporterBtn.addEventListener('click', () => {
+                const email = earlySupporterEmail.value.trim();
+                if (!email) {
+                    showNotification('Please enter an email address', 'error');
+                    return;
+                }
+                
+                if (!email.endsWith('@gmail.com')) {
+                    showNotification('Only Gmail addresses are allowed', 'error');
+                    return;
+                }
+                
+                if (earlySupporters.includes(email)) {
+                    showNotification('This user is already an early supporter', 'error');
+                    return;
+                }
+                
+                earlySupporters.push(email);
+                localStorage.setItem('earlySupporters', JSON.stringify(earlySupporters));
+                earlySupporterEmail.value = '';
+                
+                showNotification('Early supporter added successfully', 'success');
+                loadEarlySupportersList();
+            });
+            
             // Profile customization functionality
             changeAvatarBtn.addEventListener('click', () => {
                 avatarUpload.click();
@@ -1891,8 +2349,8 @@
                 const file = e.target.files[0];
                 if (!file) return;
                 
-                if (!file.type.startsWith('image/')) {
-                    showNotification('Please select an image file', 'error');
+                if (!file.type.startsWith('image/') && !file.type.startsWith('video/') && !file.name.endsWith('.gif')) {
+                    showNotification('Please select an image, video, or GIF file', 'error');
                     return;
                 }
                 
@@ -1912,14 +2370,131 @@
                         saveUserData();
                     }
                 };
+                
+                if (file.type.startsWith('image/') || file.name.endsWith('.gif')) {
+                    reader.readAsDataURL(file);
+                } else if (file.type.startsWith('video/')) {
+                    // Create a thumbnail for video
+                    const video = document.createElement('video');
+                    video.src = URL.createObjectURL(file);
+                    video.addEventListener('loadeddata', () => {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                        avatarPreview.src = canvas.toDataURL();
+                        
+                        // Update user avatar in UI
+                        if (currentUser) {
+                            const userImg = document.querySelector('.user-info img');
+                            if (userImg) {
+                                userImg.src = canvas.toDataURL();
+                            }
+                            
+                            // Save to user data
+                            currentUser.avatar = canvas.toDataURL();
+                            saveUserData();
+                        }
+                    });
+                }
+            });
+            
+            // Banner upload functionality
+            triggerBannerUpload.addEventListener('click', () => {
+                profileBanner.click();
+            });
+            
+            profileBanner.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                if (!file.type.startsWith('image/') && !file.type.startsWith('video/') && !file.name.endsWith('.gif')) {
+                    showNotification('Please select an image, video, or GIF file', 'error');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    if (file.type.startsWith('image/') || file.name.endsWith('.gif')) {
+                        bannerPreviewContainer.innerHTML = `<img src="${e.target.result}" alt="Banner Preview">`;
+                    } else if (file.type.startsWith('video/')) {
+                        bannerPreviewContainer.innerHTML = `<video autoplay muted loop><source src="${e.target.result}" type="${file.type}"></video>`;
+                    }
+                    
+                    // Save to user data
+                    if (currentUser) {
+                        currentUser.banner = e.target.result;
+                        currentUser.bannerType = file.type.startsWith('video/') ? 'video' : 'image';
+                        saveUserData();
+                    }
+                };
+                
                 reader.readAsDataURL(file);
+            });
+            
+            // Sound upload functionality
+            triggerSoundUpload.addEventListener('click', () => {
+                profileSound.click();
+            });
+            
+            profileSound.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                
+                if (!file.type.startsWith('audio/')) {
+                    showNotification('Please select an audio file', 'error');
+                    return;
+                }
+                
+                selectedSoundFile.textContent = file.name;
+                
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    // Save to user data
+                    if (currentUser) {
+                        currentUser.sound = e.target.result;
+                        currentUser.soundName = file.name;
+                        saveUserData();
+                    }
+                };
+                
+                reader.readAsDataURL(file);
+            });
+            
+            // Color picker functionality
+            colorOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    colorOptions.forEach(o => o.classList.remove('selected'));
+                    option.classList.add('selected');
+                    
+                    if (currentUser) {
+                        currentUser.profileColor = option.dataset.color;
+                        saveUserData();
+                    }
+                });
+            });
+            
+            // Display name availability check
+            profileName.addEventListener('input', () => {
+                checkDisplayNameAvailability(profileName.value);
             });
             
             saveProfileBtn.addEventListener('click', () => {
                 if (!currentUser) return;
                 
+                const newDisplayName = profileName.value.trim();
+                
+                // Check if display name is available
+                if (newDisplayName && newDisplayName !== currentUser.name) {
+                    const isAvailable = checkDisplayNameAvailability(newDisplayName, true);
+                    if (!isAvailable) {
+                        showNotification('Display name is already taken', 'error');
+                        return;
+                    }
+                }
+                
                 // Update user data
-                currentUser.displayName = profileName.value || currentUser.name;
+                currentUser.displayName = newDisplayName || currentUser.name;
                 currentUser.bio = profileBio.value;
                 currentUser.website = profileWebsite.value;
                 
@@ -1933,6 +2508,79 @@
                 }
                 
                 showNotification('Profile saved successfully!', 'success');
+            });
+            
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.trim().toLowerCase();
+                if (query.length < 2) {
+                    searchResults.style.display = 'none';
+                    return;
+                }
+                
+                const results = marketplaceUsers.filter(user => 
+                    user.displayName && user.displayName.toLowerCase().includes(query)
+                );
+                
+                displaySearchResults(results);
+            });
+            
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    const query = searchInput.value.trim().toLowerCase();
+                    if (query.length < 2) return;
+                    
+                    const results = marketplaceUsers.filter(user => 
+                        user.displayName && user.displayName.toLowerCase().includes(query)
+                    );
+                    
+                    if (results.length === 1) {
+                        viewUserProfile(results[0]);
+                    }
+                }
+            });
+            
+            // Follow button functionality
+            followButton.addEventListener('click', () => {
+                if (!currentUser || !displayedUser) return;
+                
+                // Initialize following data if not exists
+                if (!followingData[currentUser.email]) {
+                    followingData[currentUser.email] = {
+                        following: [],
+                        followers: []
+                    };
+                }
+                
+                if (!followingData[displayedUser.email]) {
+                    followingData[displayedUser.email] = {
+                        following: [],
+                        followers: []
+                    };
+                }
+                
+                // Check if already following
+                const isFollowing = followingData[currentUser.email].following.includes(displayedUser.email);
+                
+                if (isFollowing) {
+                    // Unfollow
+                    followingData[currentUser.email].following = followingData[currentUser.email].following.filter(email => email !== displayedUser.email);
+                    followingData[displayedUser.email].followers = followingData[displayedUser.email].followers.filter(email => email !== currentUser.email);
+                    followButton.innerHTML = '<i class="fas fa-user-plus"></i> Follow';
+                    showNotification(`Unfollowed ${displayedUser.displayName}`, 'info');
+                } else {
+                    // Follow
+                    followingData[currentUser.email].following.push(displayedUser.email);
+                    followingData[displayedUser.email].followers.push(currentUser.email);
+                    followButton.innerHTML = '<i class="fas fa-user-check"></i> Following';
+                    showNotification(`Following ${displayedUser.displayName}`, 'success');
+                }
+                
+                // Save following data
+                localStorage.setItem('followingData', JSON.stringify(followingData));
+                
+                // Update follower count
+                updateProfileStats();
             });
             
             // Set up modal functionality
@@ -2012,7 +2660,7 @@
                 const reader = new FileReader();
                 
                 // Check if file is an image
-                if (file.type.startsWith('image/')) {
+                if (file.type.startsWith('image/') || file.name.endsWith('.gif')) {
                     reader.onload = (e) => {
                         previewContainer.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
                     };
@@ -2027,7 +2675,7 @@
                 }
                 // Handle other cases
                 else {
-                    showNotification('Please select an image or video file for preview', 'error');
+                    showNotification('Please select an image, video, or GIF file for preview', 'error');
                     e.target.value = '';
                 }
             });
@@ -2069,30 +2717,40 @@
                         title,
                         description,
                         preview: e.target.result,
-                        previewType: previewFile.type.startsWith('image/') ? 'image' : 'video',
+                        previewType: previewFile.type.startsWith('image/') || previewFile.name.endsWith('.gif') ? 'image' : 'video',
                         fileName: assetFilePath.name,
+                        fileData: null, // Will be stored separately for large files
                         uploadDate: new Date().toLocaleDateString(),
-                        uploader: currentUser.name,
+                        uploader: currentUser.email,
+                        uploaderName: currentUser.displayName || currentUser.name,
                         views: 0,
                         downloads: 0,
                         likes: 0
                     };
                     
-                    // Add to community assets
-                    communityAssets.push(newAsset);
+                    // Read the asset file
+                    const fileReader = new FileReader();
+                    fileReader.onload = (event) => {
+                        newAsset.fileData = event.target.result;
+                        
+                        // Add to community assets
+                        communityAssets.push(newAsset);
+                        
+                        // Save to localStorage
+                        localStorage.setItem('communityAssets', JSON.stringify(communityAssets));
+                        
+                        // Show success message
+                        showNotification('Asset uploaded successfully!', 'success');
+                        
+                        // Close modal and reset form
+                        uploadModal.style.display = 'none';
+                        resetUploadForm();
+                        
+                        // Update community assets display
+                        renderCommunityAssets();
+                    };
                     
-                    // Save to localStorage
-                    localStorage.setItem('communityAssets', JSON.stringify(communityAssets));
-                    
-                    // Show success message
-                    showNotification('Asset uploaded successfully!', 'success');
-                    
-                    // Close modal and reset form
-                    uploadModal.style.display = 'none';
-                    resetUploadForm();
-                    
-                    // Update community assets display
-                    renderCommunityAssets();
+                    fileReader.readAsDataURL(assetFilePath);
                 };
                 
                 reader.readAsDataURL(previewFile);
@@ -2125,6 +2783,9 @@
                 // Check if user is admin
                 const isAdmin = adminUsers.includes(email);
                 
+                // Check if user is early supporter
+                const isEarlySupporter = earlySupporters.includes(email);
+                
                 // Set current user
                 currentUser = {
                     name: user.name,
@@ -2132,9 +2793,16 @@
                     password: user.password,
                     avatar: user.avatar || 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/250px-Black.png',
                     isAdmin: isAdmin,
+                    isEarlySupporter: isEarlySupporter,
                     displayName: user.displayName,
                     bio: user.bio,
                     website: user.website,
+                    banner: user.banner,
+                    bannerType: user.bannerType,
+                    sound: user.sound,
+                    soundName: user.soundName,
+                    profileColor: user.profileColor || '#6c757d',
+                    joinDate: user.joinDate || new Date().toLocaleDateString(),
                     downloadHistory: user.downloadHistory || []
                 };
                 
@@ -2176,6 +2844,9 @@
                     return;
                 }
                 
+                // Check if user is early supporter
+                const isEarlySupporter = earlySupporters.includes(email);
+                
                 // Create new user directly without verification
                 const isAdmin = adminUsers.includes(email);
                 const newUser = {
@@ -2184,9 +2855,16 @@
                     password: password,
                     avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/250px-Black.png',
                     isAdmin: isAdmin,
+                    isEarlySupporter: isEarlySupporter,
                     displayName: name,
                     bio: '',
                     website: '',
+                    banner: '',
+                    bannerType: '',
+                    sound: '',
+                    soundName: '',
+                    profileColor: '#6c757d',
+                    joinDate: new Date().toLocaleDateString(),
                     downloadHistory: []
                 };
                 
@@ -2401,7 +3079,7 @@
                             </div>
                         </div>
                         <div style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--medium);">
-                            Uploaded by ${asset.uploader} on ${asset.uploadDate}
+                            Uploaded by <span class="user-link" data-email="${asset.uploader}" style="cursor: pointer; color: var(--accent);">${asset.uploaderName}</span> on ${asset.uploadDate}
                         </div>
                     </div>
                 `;
@@ -2484,6 +3162,17 @@
                     }
                 });
             });
+            
+            // Add event listeners to user links
+            document.querySelectorAll('.user-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    const userEmail = link.dataset.email;
+                    const user = marketplaceUsers.find(u => u.email === userEmail);
+                    if (user) {
+                        viewUserProfile(user);
+                    }
+                });
+            });
         }
         
         // Download asset function
@@ -2506,33 +3195,49 @@
             
             showNotification(`Downloading "${assetName}"...`, 'info');
             
-            // Create a dummy file content (in a real app, this would be the actual asset data)
-            const fileContent = `This is a simulation of the ${assetName} file content. In a real application, this would be binary asset data.`;
-            
-            // Create a blob with the file content
-            const blob = new Blob([fileContent], { type: 'application/octet-stream' });
-            
-            // Create a download link
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            
-            // Set an appropriate file extension based on asset type
-            let extension = '.rbxm';
-            if (assetName.includes('Animation') || assetName.includes('Pack')) {
-                extension = '.rbxl';
+            // Check if we have a file for this asset
+            if (assetFiles[assetName]) {
+                // Create a download link for the actual file
+                const a = document.createElement('a');
+                a.href = assetFiles[assetName].url;
+                a.download = assetFiles[assetName].filename;
+                document.body.appendChild(a);
+                a.click();
+                
+                // Clean up
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    showNotification(`"${assetName}" downloaded successfully!`, 'success');
+                }, 1000);
+            } else {
+                // Create a dummy file content (fallback)
+                const fileContent = `This is a simulation of the ${assetName} file content. In a real application, this would be binary asset data.`;
+                
+                // Create a blob with the file content
+                const blob = new Blob([fileContent], { type: 'application/octet-stream' });
+                
+                // Create a download link
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                
+                // Set an appropriate file extension based on asset type
+                let extension = '.rbxm';
+                if (assetName.includes('Animation') || assetName.includes('Pack')) {
+                    extension = '.rbxl';
+                }
+                
+                a.download = `${assetName.replace(/\s+/g, '_')}${extension}`;
+                document.body.appendChild(a);
+                a.click();
+                
+                // Clean up
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showNotification(`"${assetName}" downloaded successfully!`, 'success');
+                }, 1000);
             }
-            
-            a.download = `${assetName.replace(/\s+/g, '_')}${extension}`;
-            document.body.appendChild(a);
-            a.click();
-            
-            // Clean up
-            setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                showNotification(`"${assetName}" downloaded successfully!`, 'success');
-            }, 1000);
         }
         
         // Download community asset
@@ -2559,27 +3264,43 @@
             
             showNotification(`Downloading "${asset.title}"...`, 'info');
             
-            // Create a dummy file content (in a real app, this would be the actual asset data)
-            const fileContent = `This is a simulation of the ${asset.title} file content. In a real application, this would be binary asset data.`;
-            
-            // Create a blob with the file content
-            const blob = new Blob([fileContent], { type: 'application/octet-stream' });
-            
-            // Create a download link
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = asset.fileName;
-            document.body.appendChild(a);
-            a.click();
-            
-            // Clean up
-            setTimeout(() => {
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-                showNotification(`"${asset.title}" downloaded successfully!`, 'success');
-                renderCommunityAssets();
-            }, 1000);
+            // Create a download link for the asset file
+            if (asset.fileData) {
+                const a = document.createElement('a');
+                a.href = asset.fileData;
+                a.download = asset.fileName;
+                document.body.appendChild(a);
+                a.click();
+                
+                // Clean up
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    showNotification(`"${asset.title}" downloaded successfully!`, 'success');
+                    renderCommunityAssets();
+                }, 1000);
+            } else {
+                // Fallback to dummy content
+                const fileContent = `This is a simulation of the ${asset.title} file content. In a real application, this would be binary asset data.`;
+                
+                // Create a blob with the file content
+                const blob = new Blob([fileContent], { type: 'application/octet-stream' });
+                
+                // Create a download link
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = asset.fileName;
+                document.body.appendChild(a);
+                a.click();
+                
+                // Clean up
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                    showNotification(`"${asset.title}" downloaded successfully!`, 'success');
+                    renderCommunityAssets();
+                }, 1000);
+            }
         }
         
         // Update user UI
@@ -2602,6 +3323,9 @@
                     adminNavLink.style.display = 'none';
                 }
                 
+                // Show search bar
+                searchContainer.style.display = 'block';
+                
                 document.getElementById('logoutButton').addEventListener('click', logout);
             } else {
                 userActions.innerHTML = `
@@ -2612,6 +3336,9 @@
                         <i class="fas fa-user-plus"></i> Sign Up
                     </button>
                 `;
+                
+                // Hide search bar
+                searchContainer.style.display = 'none';
                 
                 // Reattach event listeners to the login and signup buttons
                 document.getElementById('loginButton').addEventListener('click', () => {
@@ -2651,6 +3378,21 @@
                 if (userPrefs.avatar) {
                     currentUser.avatar = userPrefs.avatar;
                 }
+                if (userPrefs.banner) {
+                    currentUser.banner = userPrefs.banner;
+                }
+                if (userPrefs.bannerType) {
+                    currentUser.bannerType = userPrefs.bannerType;
+                }
+                if (userPrefs.sound) {
+                    currentUser.sound = userPrefs.sound;
+                }
+                if (userPrefs.soundName) {
+                    currentUser.soundName = userPrefs.soundName;
+                }
+                if (userPrefs.profileColor) {
+                    currentUser.profileColor = userPrefs.profileColor;
+                }
             }
         }
         
@@ -2671,7 +3413,12 @@
                 displayName: currentUser.displayName,
                 bio: currentUser.bio,
                 website: currentUser.website,
-                avatar: currentUser.avatar
+                avatar: currentUser.avatar,
+                banner: currentUser.banner,
+                bannerType: currentUser.bannerType,
+                sound: currentUser.sound,
+                soundName: currentUser.soundName,
+                profileColor: currentUser.profileColor
             };
             
             localStorage.setItem(`userPrefs_${currentUser.email}`, JSON.stringify(userPrefs));
@@ -2685,6 +3432,57 @@
             profileBio.value = currentUser.bio || '';
             profileWebsite.value = currentUser.website || '';
             avatarPreview.src = currentUser.avatar;
+            
+            // Load banner if exists
+            if (currentUser.banner) {
+                if (currentUser.bannerType === 'video') {
+                    bannerPreviewContainer.innerHTML = `<video autoplay muted loop><source src="${currentUser.banner}"></video>`;
+                } else {
+                    bannerPreviewContainer.innerHTML = `<img src="${currentUser.banner}" alt="Banner Preview">`;
+                }
+            } else {
+                bannerPreviewContainer.innerHTML = '<i class="fas fa-image"></i>';
+            }
+            
+            // Load sound if exists
+            if (currentUser.soundName) {
+                selectedSoundFile.textContent = currentUser.soundName;
+            } else {
+                selectedSoundFile.textContent = 'No sound selected';
+            }
+            
+            // Load profile color
+            colorOptions.forEach(option => {
+                option.classList.remove('selected');
+                if (option.dataset.color === currentUser.profileColor) {
+                    option.classList.add('selected');
+                }
+            });
+            
+            // Check display name availability
+            checkDisplayNameAvailability(profileName.value);
+        }
+        
+        // Check if a display name is available
+        function checkDisplayNameAvailability(name, silent = false) {
+            if (!name || name === currentUser.name) {
+                nameAvailability.textContent = '';
+                return true;
+            }
+            
+            const isAvailable = !marketplaceUsers.some(user => user.displayName === name && user.email !== currentUser.email);
+            
+            if (!silent) {
+                if (isAvailable) {
+                    nameAvailability.textContent = '✓ Available';
+                    nameAvailability.style.color = 'var(--success)';
+                } else {
+                    nameAvailability.textContent = '✗ Taken';
+                    nameAvailability.style.color = 'var(--danger)';
+                }
+            }
+            
+            return isAvailable;
         }
         
         // Load download history
@@ -2775,7 +3573,12 @@
                 displayName: currentUser.displayName,
                 bio: currentUser.bio,
                 website: currentUser.website,
-                avatar: currentUser.avatar
+                avatar: currentUser.avatar,
+                banner: currentUser.banner,
+                bannerType: currentUser.bannerType,
+                sound: currentUser.sound,
+                soundName: currentUser.soundName,
+                profileColor: currentUser.profileColor
             };
             
             localStorage.setItem(`userPrefs_${currentUser.email}`, JSON.stringify(userPrefs));
@@ -2813,7 +3616,12 @@
                 displayName: currentUser.displayName,
                 bio: currentUser.bio,
                 website: currentUser.website,
-                avatar: currentUser.avatar
+                avatar: currentUser.avatar,
+                banner: currentUser.banner,
+                bannerType: currentUser.bannerType,
+                sound: currentUser.sound,
+                soundName: currentUser.soundName,
+                profileColor: currentUser.profileColor
             };
             
             localStorage.setItem(`userPrefs_${currentUser.email}`, JSON.stringify(userPrefs));
@@ -2846,15 +3654,28 @@
                 commentsList.appendChild(noComments);
             } else {
                 assetComments[assetName].forEach(comment => {
+                    const commentUser = marketplaceUsers.find(u => u.email === comment.userEmail);
                     const commentElement = document.createElement('div');
                     commentElement.className = 'comment';
                     commentElement.innerHTML = `
                         <div class="comment-header">
-                            <span class="comment-user">${comment.user}</span>
+                            <span class="comment-user" data-email="${comment.userEmail}">
+                                <img src="${commentUser?.avatar || 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/250px-Black.png'}" alt="${commentUser?.displayName || commentUser?.name}">
+                                ${commentUser?.displayName || commentUser?.name}
+                            </span>
                             <span class="comment-date">${comment.date}</span>
                         </div>
                         <div class="comment-text">${comment.text}</div>
                     `;
+                    
+                    // Add click event to user name
+                    const userElement = commentElement.querySelector('.comment-user');
+                    userElement.addEventListener('click', () => {
+                        const user = marketplaceUsers.find(u => u.email === userElement.dataset.email);
+                        if (user) {
+                            viewUserProfile(user);
+                        }
+                    });
                     
                     commentsList.appendChild(commentElement);
                 });
@@ -2872,7 +3693,7 @@
             
             // Add new comment
             assetComments[currentAsset].push({
-                user: currentUser.name,
+                userEmail: currentUser.email,
                 text: commentText,
                 date: new Date().toLocaleString()
             });
@@ -2893,7 +3714,7 @@
             marketplaceUsers.forEach(user => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${user.name}</td>
+                    <td>${user.displayName || user.name}</td>
                     <td>${user.email}</td>
                     <td>Active</td>
                     <td>${user.isAdmin ? 'Yes' : 'No'}</td>
@@ -2917,7 +3738,11 @@
                 { name: 'Fantasy Dragon', type: 'Character', uploader: 'System', status: 'Approved' },
                 { name: 'Modular City Pack', type: 'Model', uploader: 'System', status: 'Approved' },
                 { name: 'Nature Pack', type: 'Environment', uploader: 'System', status: 'approved' },
-                { name: 'Crystal Collection', type: 'Model', uploader: 'System', status: 'Approved' }
+                { name: 'Crystal Collection', type: 'Model', uploader: 'System', status: 'Approved' },
+                { name: 'Basic UI Kit', type: 'UI', uploader: 'System', status: 'Approved' },
+                { name: 'Character Animation Pack', type: 'Animation', uploader: 'System', status: 'Approved' },
+                { name: 'Gesture Pack', type: 'Animation', uploader: 'System', status: 'Approved' },
+                { name: 'VFX Elements', type: 'VFX', uploader: 'System', status: 'Approved' }
             ];
             
             predefinedAssets.forEach(asset => {
@@ -2938,19 +3763,35 @@
             
             // Add community assets
             communityAssets.forEach(asset => {
+                const uploader = marketplaceUsers.find(u => u.email === asset.uploader);
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${asset.title}</td>
                     <td>Community</td>
-                    <td>${asset.uploader}</td>
+                    <td>${uploader ? (uploader.displayName || uploader.name) : asset.uploaderName}</td>
                     <td>Approved</td>
                     <td class="admin-actions">
                         <button class="btn btn-secondary">Edit</button>
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-danger delete-admin-asset-btn" data-asset-id="${asset.id}">Delete</button>
                     </td>
                 `;
                 
                 assetsTableBody.appendChild(row);
+            });
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-admin-asset-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const assetId = btn.dataset.assetId;
+                    const asset = communityAssets.find(a => a.id == assetId);
+                    
+                    if (asset && confirm(`Are you sure you want to delete "${asset.title}"?`)) {
+                        communityAssets = communityAssets.filter(a => a.id != assetId);
+                        localStorage.setItem('communityAssets', JSON.stringify(communityAssets));
+                        showNotification('Asset deleted successfully', 'success');
+                        loadAssetsTable();
+                    }
+                });
             });
         }
         
@@ -2965,8 +3806,277 @@
             });
         }
         
-        // Initialize the app when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', initApp);
+        // Load early supporters list
+        function loadEarlySupportersList() {
+            earlySupportersList.innerHTML = '';
+            
+            earlySupporters.forEach(email => {
+                const li = document.createElement('li');
+                li.textContent = email;
+                earlySupportersList.appendChild(li);
+            });
+        }
+        
+        // Display search results
+        function displaySearchResults(results) {
+            searchResults.innerHTML = '';
+            
+            if (results.length === 0) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            
+            results.forEach(user => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'search-result-item';
+                resultItem.innerHTML = `
+                    <img src="${user.avatar || 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/250px-Black.png'}" alt="${user.displayName || user.name}">
+                    <div>${user.displayName || user.name}</div>
+                `;
+                
+                resultItem.addEventListener('click', () => {
+                    viewUserProfile(user);
+                });
+                
+                searchResults.appendChild(resultItem);
+            });
+            
+            searchResults.style.display = 'block';
+        }
+        
+        // View user profile
+        function viewUserProfile(user) {
+            displayedUser = user;
+            
+            // Hide all other sections
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            adminPanel.style.display = 'none';
+            profileContainer.style.display = 'none';
+            downloadHistory.style.display = 'none';
+            searchContainer.style.display = 'block';
+            
+            // Show user profile
+            userProfile.style.display = 'block';
+            
+            // Load profile data
+            profileNameDisplay.textContent = user.displayName || user.name;
+            profileUsername.textContent = `@${user.email.split('@')[0]}`;
+            profileBioDisplay.textContent = user.bio || 'No bio provided';
+            profileAvatarDisplay.src = user.avatar || 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Black.png/250px-Black.png';
+            
+            // Load banner
+            if (user.banner) {
+                if (user.bannerType === 'video') {
+                    profileBannerDisplay.innerHTML = `<video autoplay muted loop><source src="${user.banner}"></video>`;
+                } else {
+                    profileBannerDisplay.innerHTML = `<img src="${user.banner}" alt="Banner">`;
+                }
+            } else {
+                profileBannerDisplay.innerHTML = '';
+            }
+            
+            // Show early supporter badge if applicable
+            if (user.isEarlySupporter) {
+                earlySupporterBadge.style.display = 'inline-block';
+            } else {
+                earlySupporterBadge.style.display = 'none';
+            }
+            
+            // Update stats
+            updateProfileStats();
+            
+            // Load website
+            if (user.website) {
+                profileWebsiteDisplay.innerHTML = `<a href="${user.website}" target="_blank">${user.website}</a>`;
+            } else {
+                profileWebsiteDisplay.textContent = 'No website provided';
+            }
+            
+            // Load join date
+            profileJoinDate.textContent = user.joinDate || 'Unknown';
+            
+            // Load user's assets
+            loadUserAssets();
+            
+            // Update follow button
+            updateFollowButton();
+            
+            // Play profile sound if available and if viewing own profile
+            if (currentUser && user.email === currentUser.email && user.sound) {
+                const audio = new Audio(user.sound);
+                audio.play().catch(e => console.log('Audio play failed:', e));
+            }
+        }
+        
+        // Update profile stats
+        function updateProfileStats() {
+            if (!displayedUser) return;
+            
+            // Count user's assets
+            const userAssets = communityAssets.filter(asset => asset.uploader === displayedUser.email);
+            assetsCount.textContent = userAssets.length;
+            
+            // Get follower count
+            let followers = 0;
+            if (followingData[displayedUser.email] && followingData[displayedUser.email].followers) {
+                followers = followingData[displayedUser.email].followers.length;
+            }
+            followersCount.textContent = followers;
+            
+            // Get following count
+            let following = 0;
+            if (followingData[displayedUser.email] && followingData[displayedUser.email].following) {
+                following = followingData[displayedUser.email].following.length;
+            }
+            followingCount.textContent = following;
+        }
+        
+        // Update follow button
+        function updateFollowButton() {
+            if (!currentUser || !displayedUser) {
+                followButton.style.display = 'none';
+                messageButton.style.display = 'none';
+                return;
+            }
+            
+            if (currentUser.email === displayedUser.email) {
+                followButton.style.display = 'none';
+                messageButton.style.display = 'none';
+            } else {
+                followButton.style.display = 'block';
+                messageButton.style.display = 'block';
+                
+                // Check if already following
+                const isFollowing = followingData[currentUser.email] && 
+                                  followingData[currentUser.email].following.includes(displayedUser.email);
+                
+                if (isFollowing) {
+                    followButton.innerHTML = '<i class="fas fa-user-check"></i> Following';
+                } else {
+                    followButton.innerHTML = '<i class="fas fa-user-plus"></i> Follow';
+                }
+            }
+        }
+        
+        // Load user's assets
+        function loadUserAssets() {
+            userAssetsGrid.innerHTML = '';
+            
+            if (!displayedUser) return;
+            
+            const userAssets = communityAssets.filter(asset => asset.uploader === displayedUser.email);
+            
+            if (userAssets.length === 0) {
+                userAssetsGrid.innerHTML = `
+                    <div class="community-assets-empty">
+                        <i class="fas fa-box-open"></i>
+                        <h3>No Assets Uploaded</h3>
+                        <p>This user hasn't uploaded any assets yet.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            userAssets.forEach(asset => {
+                const assetCard = document.createElement('div');
+                assetCard.className = 'asset-card';
+                assetCard.innerHTML = `
+                    <div class="asset-preview">
+                        ${asset.previewType === 'image' ? 
+                            `<img src="${asset.preview}" alt="${asset.title}">` : 
+                            `<video><source src="${asset.preview}"></video>`
+                        }
+                    </div>
+                    <div class="asset-info">
+                        <h3>${asset.title}</h3>
+                        <p>${asset.description}</p>
+                        <div class="asset-stats">
+                            <div class="stat"><i class="fas fa-eye"></i> <span class="view-count">${asset.views}</span></div>
+                            <div class="stat"><i class="fas fa-download"></i> <span class="download-count">${asset.downloads}</span></div>
+                            <div class="stat"><i class="fas fa-heart"></i> <span class="like-count">${asset.likes}</span></div>
+                        </div>
+                        <div class="asset-meta">
+                            <div class="free-badge">Community</div>
+                            <div class="asset-actions">
+                                <button class="btn btn-secondary preview-community-btn" data-asset-id="${asset.id}">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn btn-primary download-community-btn" data-asset-id="${asset.id}">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                userAssetsGrid.appendChild(assetCard);
+            });
+            
+            // Add event listeners to preview and download buttons
+            document.querySelectorAll('.preview-community-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const assetId = btn.dataset.assetId;
+                    const asset = communityAssets.find(a => a.id == assetId);
+                    
+                    if (asset) {
+                        document.getElementById('previewTitle').textContent = asset.title;
+                        document.getElementById('previewName').textContent = asset.title;
+                        document.getElementById('previewDescription').textContent = asset.description;
+                        document.getElementById('previewViews').textContent = asset.views;
+                        document.getElementById('previewDownloads').textContent = asset.downloads;
+                        document.getElementById('previewLikes').textContent = asset.likes;
+                        
+                        const previewMedia = document.getElementById('previewMedia');
+                        if (asset.previewType === 'image') {
+                            previewMedia.innerHTML = `<img src="${asset.preview}" alt="${asset.title}" style="width: 100%; height: 100%; object-fit: contain;">`;
+                        } else {
+                            previewMedia.innerHTML = `<video controls style="width: 100%; height: 100%; object-fit: contain;"><source src="${asset.preview}"></video>`;
+                        }
+                        
+                        previewActionBtn.innerHTML = '<i class="fas fa-download"></i> Download';
+                        previewActionBtn.onclick = () => {
+                            downloadCommunityAsset(asset);
+                            previewModal.style.display = 'none';
+                        };
+                        
+                        // Set up like button
+                        const isLiked = likedAssets.includes(asset.title);
+                        updateLikeButton(isLiked);
+                        
+                        likeBtn.onclick = () => {
+                            toggleLikeCommunityAsset(asset);
+                        };
+                        
+                        // Load comments
+                        loadComments(asset.title);
+                        
+                        // Set current asset
+                        currentAsset = asset.title;
+                        
+                        // Increment view count
+                        asset.views++;
+                        localStorage.setItem('communityAssets', JSON.stringify(communityAssets));
+                        
+                        previewModal.style.display = 'flex';
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.download-community-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const assetId = btn.dataset.assetId;
+                    const asset = communityAssets.find(a => a.id == assetId);
+                    
+                    if (asset) {
+                        downloadCommunityAsset(asset);
+                    }
+                });
+            });
+        }
+        
+        // Initialize the app
+        initApp();
     </script>
 </body>
 </html>
